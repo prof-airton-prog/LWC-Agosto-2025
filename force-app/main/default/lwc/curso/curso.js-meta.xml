@@ -5,6 +5,7 @@
     <masterLabel>Cursos</masterLabel>
     <targets>
         <target>lightning__RecordPage</target>
+        <target>lightning__AppPage</target>
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__RecordPage">

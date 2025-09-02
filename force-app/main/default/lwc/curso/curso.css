@@ -1,0 +1,23 @@
+.tabela {
+    width: 100%;
+    border: 5px solid greenyellow;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-collapse: collapse;
+}
+.tabela th {
+    border: 3px solid greenyellow;
+    background-color: darkturquoise;
+    padding: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 24px;
+    text-align: center;
+    color: red;
+}
+.tabela td {
+    border: 1px solid black;
+    padding: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+}
