@@ -21,3 +21,9 @@
     padding-bottom: 12px;
     text-align: center;
 }
+.tabela tbody tr:hover {
+    background-color: rosybrown;
+}
+.linhas:nth-child(even) {
+    background-color: azure;
+}
