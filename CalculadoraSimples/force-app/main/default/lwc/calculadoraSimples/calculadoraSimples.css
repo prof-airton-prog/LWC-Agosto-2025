@@ -54,10 +54,6 @@
     border-color: rgb(0, 255, 229);
 }
 
-.botao-vazio {
-    grid-column: span 2;
-}
-
 .equals-btn {
     background-color: #009944;
     border-color: #009944;
@@ -66,4 +62,8 @@
 .equals-btn:hover {
     background-color: #036b3d;
     border-color: #036b3d;
+}
+
+.decimal-btn {
+    grid-column: 3;
 }

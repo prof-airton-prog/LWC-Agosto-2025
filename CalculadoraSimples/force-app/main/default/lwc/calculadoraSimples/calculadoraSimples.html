@@ -133,15 +133,16 @@
             <!-- Quinta Linha \- 0, Decimal e Igual -->
              <lightning-button 
                 variant="neutral" 
-                label="0" 
-                class="calculator-button botao-vazio"
+                label="0"
+                data-number="0"
+                class="calculator-button"
                 onclick={inputNumber}>
             </lightning-button>
             <lightning-button 
                 variant="neutral" 
                 label="."
-                class="calculator-button"
-                onclick={inputSignal}>
+                class="calculator-button decimal-btn"
+                onclick={inputDecimal}>
             </lightning-button>
             <lightning-button 
                 variant="success"
