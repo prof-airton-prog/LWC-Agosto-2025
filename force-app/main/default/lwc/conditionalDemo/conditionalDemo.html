@@ -1,0 +1,61 @@
+<template>
+    <lightning-card title="Demonstrações de Exibição Condicional" icon-name="utility:toggle">
+        <div class="slds-var-p-around_medium slds-border_bottom">
+            <h2 class="slds-text-title_bold">A- Se verdadeiro ou falso</h2>
+            <lightning-button
+                label={botaoVisibilidadeLabel}
+                onclick={toggleVisibilidade}
+                class="slds-var-m-bottom_small">
+            </lightning-button>
+
+            <!--Template condicional-->
+            <template if:true={mostrarDetalhes}>
+                <p>Os detalhes estão VISÍVEIS</p>
+            </template>
+            <template if:false={mostrarDetalhes}>
+                <p>Os detalhes estão OCULTOS</p>
+            </template>
+        </div>
+
+        <!--Máquina de estados-->
+        <div class="slds-var-p-around_medium slds-border_bottom">
+            <h2 class="slds-text-title_bold">B- Carregando / Erro / Ok</h2>
+            <div class="slds-button-group slds-var-m-bottom_small" role="group">
+                <lightning-button label="Carregando" onclick={simularCarregando}></lightning-button>
+                <lightning-button label="Forçar Erro" onclick={simularErro}></lightning-button>
+                <lightning-button label="Carregar" onclick={simularSucesso}></lightning-button>
+            </div>
+
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Carregando..." size="small"></lightning-spinner>
+                <p class="slds-var-m-top_small">Carregando dados...</p>
+            </template>
+
+            <template if:true={isError}>
+                <lightning-icon icon-name="utility:error" alternative-text="Erro" class="slds-var-m-right_x-small"></lightning-icon>
+                <span class="slds-text-color_error">Falha ao carregar. Tente novamente.</span>
+            </template>
+
+            <template if:true={isSuccess}>
+                <p>Dados carregados com sucesso!</p>
+            </template>
+        </div>
+
+        <!--Condições com Getters-->
+        <div class="slds-var-p-around_medium">
+            <h2 class="slds-text-title_bold">C- Condições com Getters</h2>
+
+            <lightning-input type="number" label="Nota do aluno (0 a 10)" value={nota} onchange={handleNotaChange}></lightning-input>
+
+            <template if:true={estaAprovado}>
+                <p class="slds-var-m-top_small">Aprovado (nota ≥ 6)</p>
+            </template>
+            <template if:true={estaRecuperacao}>
+                <p class="slds-var-m-top_small">Recuperação (4 ≤ nota &lt; 6)</p>
+            </template>
+            <template if:true={estaReprovado}>
+                <p class="slds-var-m-top_small">Reprovado (nota &lt; 4)</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
