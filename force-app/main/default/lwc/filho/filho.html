@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title={detalhesDoCurso.nome} icon-name="standard:apex">
+        <div class="slds-var-p-horizontal_medium slds-var-p-vertical_small">
+            <p class="slds-text-title_caps">{detalhesDoCurso.categoria}</p>
+            <p class="slds-var-m-top_x-small">{detalhesDoCurso.descricao}</p>
+            <p class="slds-var-m-top_small slds-text-title_bold">Carga horária: {detalhesDoCurso.cargaHoraria}h</p>
+            <lightning-badge class="slds-var-m-top_small" label={detalhesDoCurso.nivel}></lightning-badge>
+        </div>
+        <div slot="footer" class="slds-grid slds-grid_align-end slds-var-p-horizontal_medium">
+            <lightning-button variant="brand" label="Ingressar" onclick={handleIngressar}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

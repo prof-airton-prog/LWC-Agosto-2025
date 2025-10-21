@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Cursos disponíveis" icon-name="utility:education">
+        <div class="slds-var-p-around_medium">
+            <div class="slds-grid slds-wrap slds-gutters">
+                <template for:each={cursos} for:item="curso">
+                    <div key={curso.id} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-var-p-around_x-small">
+                        <c-filho detalhes-do-curso={curso} oningressar={handleIngressar}></c-filho>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>
