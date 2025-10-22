@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Lifecycle Pai">
+        <p>Componente Pai</p>
+        <lightning-button variant="brand" slot="actions" label="Show/Hide" onclick={handleShowHide} class="slds-var-m-left_x-small"></lightning-button>
+    <template if:true={show}>
+        <c-lifecycle_2></c-lifecycle_2>
+    </template>
+    </lightning-card>
+</template>
