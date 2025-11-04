@@ -29,8 +29,8 @@ export default class Pai extends LightningElement {
     ];
 
     handleIngressar(event) {
-        const curso = event.detail;
-        console.log('Ingressar no curso: ');
+        const curso = event.detail[0];
+        console.log('Ingressar no curso: ' + curso);
         //Abrir uma modal - Chamar um método Apex
     }
 }
