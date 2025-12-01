@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Abrir ListViews de Case" icon-name="standard:case">
+        <div class="slds-var-m-around_medium">
+            <p>Ao clicar no botão, a ListView padrão de Cases recentes será aberta na plataforma Salesforce</p>
+            <lightning-button
+                label="Abrir ListView de Recent Cases"
+                variant="brand"
+                onclick={openRecentCases}>
+            </lightning-button>
+        </div>
+
+        <div class="slds-var-m-around_medium">
+            <p>Ao clicar no botão, a ListView padrão de todos os Cases fechados será aberta na plataforma Salesforce</p>
+            <lightning-button
+                label="Abrir ListView de All Closed Cases"
+                variant="brand"
+                onclick={openAllClosedCases}>
+            </lightning-button>
+        </div>
+
+        <div class="slds-var-m-around_medium">
+            <p>Ao clicar no botão, a ListView personalizada de testes de Cases será aberta na plataforma Salesforce</p>
+            <lightning-button
+                label="Abrir ListView de Teste Personalizado"
+                variant="brand"
+                onclick={openCustomListView}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>
