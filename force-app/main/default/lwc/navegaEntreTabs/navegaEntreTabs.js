@@ -15,3 +15,4 @@ export default class NavegaEntreTabs extends NavigationMixin(LightningElement) {
 
 
 //https://developer.salesforce.com/docs/platform/lwc/guide/use-navigate-page-types.html
+//https://developer.salesforce.com/docs/platform/lwc/guide/reference-page-reference-type.html
