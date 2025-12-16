@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Gerar URL da Conta" icon-name="standard:account">
+        <div class="slds-var-m-around_medium">
+            <p>RecordId atual: {recordId}</p>
+
+            <lightning-button
+                label="Gerar URL da conta"
+                variant="brand"
+                onclick={handleGenerateUrl}>
+            </lightning-button>
+            
+            <template if:true={generatedUrl}>
+                <div class="slds-var-m-top_medium">
+                    <p><strong>URL Gerada:</strong></p>
+                    <p>{generatedUrl}</p>
+
+                    <p class="slds-var-m-top_small">
+                        <a href={generatedUrl} target="_blank">
+                            Abrir conta em nova aba
+                        </a>
+                    </p>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

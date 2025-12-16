@@ -5,7 +5,7 @@ export default class NavegaEntreTabs extends NavigationMixin(LightningElement) {
 
     openCustomTab(){
         this[NavigationMixin.Navigate]({
-            type: 'standard__navItemPage',
+            type: 'standard__component',
             attributes: {
                 apiName: 'Welcome' //Onde vai o nome da Aba
             }
