@@ -1,0 +1,22 @@
+<template>
+    <div class="slds-box slds-theme_shade">
+        <template iterator:course={courses}>
+            <c-event-filho 
+                key={course.value.id}
+                course-id={course.value.id}
+                course-name={course.value.name}
+                course-price={course.value.price}
+                ondiscountrequest={handleDiscountRequest}>
+            </c-event-filho>
+        </template>
+
+        <div class="slds-var-m-top_medium">
+            <lightning-button
+                label="Aplicar desconto em TODOS"
+                variant="brand"
+                class="slds-var-m-top_medium"
+                onclick={applyDiscountToAll}>
+            </lightning-button>
+        </div>
+    </div>
+</template>

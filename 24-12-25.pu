@@ -1,0 +1,52 @@
+@startuml
+skinparam style strictuml
+skinparam sequenceMessageAlign center
+
+actor "Usuário" as User
+box "Componente Pai (c-event-pai)" #f8f9fa
+    participant "eventPai.html" as PH
+    participant "eventPai.js" as PJ
+end box
+
+box "Componente Filho (c-event-filho)" #e3f2fd
+    participant "eventFilho.html" as CH
+    participant "eventFilho.js" as CJ
+end box
+
+== Fluxo 1: Solicitar Desconto (Individual) ==
+
+User -> CH: Clica em "Solicitar desconto"
+CH -> CJ: onclick: generateDiscountEventByChild()
+activate CJ
+CJ -> CJ: new CustomEvent('discountrequest')
+CJ -> PH: dispatchEvent(event)
+deactivate CJ
+
+PH -> PJ: ondiscountrequest: handleDiscountRequest(event)
+activate PJ
+PJ -> PJ: querySelectorAll('c-event-filho')
+PJ -> CJ: Chamada de Método @api: applyDiscount()
+activate CJ
+CJ -> CJ: Atualiza this.coursePrice
+CJ -->> CH: Re-renderiza valor (Data Binding)
+deactivate CJ
+deactivate PJ
+
+== Fluxo 2: Aplicar Desconto em Todos ==
+
+User -> PH: Clica em "Aplicar desconto em TODOS"
+PH -> PJ: onclick: applyDiscountToAll()
+activate PJ
+PJ -> PJ: querySelectorAll('c-event-filho')
+
+loop Para cada card encontrado
+    PJ -> CJ: Chamada de Método @api: applyDiscount()
+    activate CJ
+    CJ -> CJ: Atualiza this.coursePrice
+    CJ -->> CH: Re-renderiza valor (Data Binding)
+    deactivate CJ
+end
+
+deactivate PJ
+
+@enduml

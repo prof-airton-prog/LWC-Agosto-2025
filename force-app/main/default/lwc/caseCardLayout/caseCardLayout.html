@@ -1,0 +1,23 @@
+<template>
+    <div class="slds-box slds-theme_default">
+        <div class="slds-text-heading_small">
+            <slot name="header"></slot>
+        </div>
+
+        <div class="slds-var-m-top_small">
+            <slot name="body"></slot>
+        </div>
+
+        <div class="slds-var-m-top_medium slds-border_top slds-var-p-top_small">
+            <slot></slot>
+        </div>
+        
+        <div class="slds-var-m-top_medium slds-border_top slds-var-p-top_small">
+            <lightning-button
+                label="Notificar Container Pai"
+                class="slds-var-m-top_small"
+                onclick={notifyParent}>
+            </lightning-button>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,19 @@
+<template>
+    <c-case-card-layout oncardaction={handleCardAction}>
+        <span slot="header">Case #000123 - Problema de Login</span>
+
+        <div slot="body">
+            Status: New<br/>
+            Prioridade: Alta<br/>
+            Data de abertura: 12/02/2022<br/>
+        </div>
+
+        <lightning-button
+            label="Abrir Case"
+            variant="brand">
+        </lightning-button>
+        <div>
+            {mensagem}
+        </div>
+    </c-case-card-layout>
+</template>
