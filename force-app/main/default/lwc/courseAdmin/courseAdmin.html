@@ -1,0 +1,27 @@
+<template>
+    <div class="slds-box slds-theme_shade">
+        <template iterator:course={courses}>
+            <c-course-card
+                key={course.value.id}
+                course-name={course.value.name}
+                course-price={course.value.price}>
+            </c-course-card>
+        </template>
+
+        <div class="slds-var-m-top_medium">
+            <lightning-button
+                label="Aplicar desconto em TODOS os cursos"
+                variant="brand"
+                class="slds-var-m-top_medium"
+                onclick={applyDiscountToAll}>
+            </lightning-button>
+            
+            <lightning-button
+                label="Desconto de 10% no primeiro curso"
+                variant="brand"
+                class="slds-var-m-left_small"
+                onclick={applyDiscountToFirst}>
+            </lightning-button>
+        </div>
+    </div>
+</template>
