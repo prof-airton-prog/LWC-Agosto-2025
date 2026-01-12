@@ -1,0 +1,6 @@
+<template>
+    <template if:true={caseRecord.data}>
+        <p><strong>Assunto: </strong> {caseRecord.data.fields.Subject.value}</p>
+        <p><strong>Status: </strong> {caseRecord.data.fields.Status.value}</p>
+    </template>
+</template>
